@@ -176,7 +176,9 @@ Thank you for being so special.
 <button onclick="startTulips()">
 🌷 Surprise
 </button>
-
+<div class="photo-box">
+    <img src="photo.jpg" alt="Saymu">
+</div>
 </div>
 <div id="gallery" style="display:none;margin-top:20px;">
   <img src="photo1.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
@@ -289,4 +291,13 @@ Made with ❤️ by Rehan
 </footer>
 
 </body>
+  <audio id="bgmusic" loop>
+  <source src="sahiba.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener("click", function () {
+  document.getElementById("bgmusic").play();
+}, { once: true });
+</script>
 </html>
