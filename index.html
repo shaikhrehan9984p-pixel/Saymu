@@ -8,26 +8,54 @@
 <style>
 body{
 margin:0;
-padding:0;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#ff4b91,#ff9ac6);
 font-family:Arial,sans-serif;
-background:linear-gradient(135deg,#ff4b91,#ff8fb1);
 color:white;
 text-align:center;
-overflow:hidden;
 }
-.container{
-padding-top:80px;
-}
-h1{
-font-size:42px;
-animation:fade 2s;
-}
-p{
-font-size:22px;
-padding:20px;
+.box{
+padding:30px;
 }
 button{
-padding:15px 30px;
-font-size:18px;
+padding:12px 25px;
 border:none;
-border-radius:30px
+border-radius:30px;
+font-size:18px;
+background:white;
+color:#ff4b91;
+cursor:pointer;
+}
+#love{
+display:none;
+margin-top:20px;
+font-size:24px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+<h1>Hi Saymu ❤️</h1>
+<p>You make every day special.</p>
+
+<button onclick="showLove()">Click Here 💖</button>
+
+<div id="love">
+I Like You So Much ❤️<br><br>
+Stay Happy Forever 🌹
+</div>
+</div>
+
+<script>
+function showLove(){
+document.getElementById("love").style.display="block";
+}
+</script>
+
+</body>
+</html>
