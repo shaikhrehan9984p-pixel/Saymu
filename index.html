@@ -6,6 +6,7 @@
 <title>For Saymu 🌷❤️</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
@@ -14,24 +15,25 @@ font-family:Arial,sans-serif;
 }
 
 body{
-background:linear-gradient(135deg,#ff9ecf,#ffd6e8);
+height:100vh;
 overflow:hidden;
 display:flex;
 justify-content:center;
 align-items:center;
-height:100vh;
+background:linear-gradient(135deg,#ffb6d9,#ffdce8,#fff5f8);
 }
 
 .card{
 width:90%;
 max-width:420px;
-background:rgba(255,255,255,.2);
-backdrop-filter:blur(10px);
-padding:25px;
-border-radius:25px;
+background:rgba(255,255,255,.22);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,.15);
 text-align:center;
-color:#fff;
-box-shadow:0 10px 30px rgba(0,0,0,.2);
+color:#ff2f7d;
+animation:fade 1.5s;
 }
 
 .bouquet{
@@ -40,25 +42,30 @@ animation:bounce 2s infinite;
 }
 
 h1{
-margin:15px 0;
+margin-top:10px;
 font-size:32px;
 }
 
 p{
+margin-top:15px;
+line-height:1.7;
 font-size:18px;
-line-height:1.6;
 }
 
 button{
-margin-top:20px;
-padding:12px 28px;
+margin-top:25px;
+padding:14px 30px;
 border:none;
-border-radius:30px;
-background:#fff;
-color:#ff4081;
+border-radius:40px;
+background:#ff2f7d;
+color:white;
 font-size:18px;
-font-weight:bold;
 cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.06);
 }
 
 #letter{
@@ -67,38 +74,18 @@ margin-top:20px;
 }
 
 @keyframes bounce{
-50%{transform:translateY(-10px);}
+50%{
+transform:translateY(-10px);
 }
-</style>
-</head>
-<body>
-
-<div class="card">
-
-<div class="bouquet">💐🌷💐</div>
-
-<h1>Hey Cutie Pie Saymu 🌷❤️</h1>
-
-<p>
-Every tulip reminds me of your beautiful smile. 🌷✨
-</p>
-
-<button onclick="showLetter()">Open My Heart 💌</button>
-
-<div id="letter">
-<h2>For You ❤️</h2>
-<p>
-This little website is made just for you. 🌷
-</p>
-</div>
-
-<script>
-function showLetter(){
-document.getElementById("letter").style.display="block";
 }
-</script>
 
-</div>
-
-</body>
-</html>
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
