@@ -89,6 +89,7 @@ animation:float 6s linear infinite;
 <body>
 
 <div class="container">
+  <div style="font-size:90px;">💐🌷💐</div>
 <h1>Hey Cutie Pie Saymu 🥹💖</h1>
 
 <p>
@@ -116,28 +117,37 @@ You are truly special. 🌹
 function showLetter(){
   document.getElementById("letter").style.display="block";
 }
-
 function startHearts(){
 
-  setInterval(function(){
+  for(let i=0;i<25;i++){
 
-    let heart=document.createElement("div");
+    setTimeout(()=>{
 
-    heart.className="heart";
+      let tulip=document.createElement("div");
 
-    heart.innerHTML="❤️";
+      tulip.innerHTML="🌷";
 
-    heart.style.left=Math.random()*100+"vw";
+      tulip.style.position="fixed";
+      tulip.style.left=Math.random()*100+"vw";
+      tulip.style.top="-50px";
+      tulip.style.fontSize=(28+Math.random()*18)+"px";
+      tulip.style.transition="top 6s linear, transform 6s linear";
+      tulip.style.zIndex="9999";
 
-    heart.style.fontSize=(20+Math.random()*25)+"px";
+      document.body.appendChild(tulip);
 
-    document.body.appendChild(heart);
+      setTimeout(()=>{
+        tulip.style.top="110vh";
+        tulip.style.transform=`rotate(${Math.random()*360}deg)`;
+      },50);
 
-    setTimeout(function(){
-      heart.remove();
-    },6000);
+      setTimeout(()=>{
+        tulip.remove();
+      },6000);
 
-  },300);
+    },i*250);
+
+  }
 
 }
 
