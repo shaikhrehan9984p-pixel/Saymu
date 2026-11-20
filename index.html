@@ -1,59 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>For Saymu ❤️</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Saymu ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff4b91,#ff8fb1,#ffd6e7);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+color:#fff;
+}
+
+.container{
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+box-shadow:0 0 30px rgba(0,0,0,.2);
+animation:fade 1.5s;
+}
+
+h1{
+font-size:38px;
+margin-bottom:15px;
+}
+
+p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:20px;
+}
+
+button{
+padding:14px 30px;
+font-size:18px;
+border:none;
+border-radius:40px;
+background:white;
+color:#ff2d75;
+font-weight:bold;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+}
+
+#letter{
+display:none;
+margin-top:20px;
+animation:fade 1s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+.heart{
+position:fixed;
+bottom:-20px;
+color:#ff2d75;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0) rotate(0deg);opacity:1;}
+100%{transform:translateY(-110vh) rotate(360deg);opacity:0;}
+}
+
+</style>
 </head>
+
 <body>
 
-<div id="loading">
-  <h1>💖 A Special Surprise For Saymu 💖</h1>
-  <p>Loading Love...</p>
-</div>
+<div class="container">
+<h1>Hey Cutie Pie Saymu 🥹💖</h1>
 
-<div id="main" style="display:none;">
+<p>
+Every moment with you is special.<br>
+Your smile makes my world brighter. ✨
+</p>
+<div style="font-size:80px;margin:20px 0;">💐</div>
+<button onclick="showLetter()">💌 Open My Heart</button>
 
-  <h1>Hi Saymu ❤️</h1>
+<div id="letter">
+<h2>For You ❤️</h2>
 
-  <p class="quote">
-    "Some people make the world beautiful just by being in it.
-    You are one of them."
-  </p>
+<p>
+No matter where life takes us,<br>
+I'll always wish for your happiness.<br><br>
+You are truly special. 🌹
+</p>
 
-  <button onclick="showLetter()">💌 Open My Heart</button>
-
-  <div id="letter">
-    <h2>For You ❤️</h2>
-
-    <p id="typing"></p>
-
-    <button onclick="showGallery()">
-      📸 Our Memories
-    </button>
-
-  </div>
-
-  <div id="gallery" style="display:none;">
-
-    <img src="photo1.jpg">
-    <img src="photo2.jpg">
-    <img src="photo3.jpg">
-
-  </div>
-
-  <audio id="music" loop>
-    <source src="music.mp3" type="audio/mpeg">
-  </audio>
-
-  <button id="musicBtn" onclick="playMusic()">
-    🎵 Play Music
-  </button>
+<button onclick="startHearts()">❤️ Surprise</button>
 
 </div>
+</div>
+<script>
 
-<script src="script.js"></script>
+function showLetter(){
+  document.getElementById("letter").style.display="block";
+}
+
+function startHearts(){
+
+  setInterval(function(){
+
+    let heart=document.createElement("div");
+
+    heart.className="heart";
+
+    heart.innerHTML="❤️";
+
+    heart.style.left=Math.random()*100+"vw";
+
+    heart.style.fontSize=(20+Math.random()*25)+"px";
+
+    document.body.appendChild(heart);
+
+    setTimeout(function(){
+      heart.remove();
+    },6000);
+
+  },300);
+
+}
+
+</script>
 
 </body>
 </html>
