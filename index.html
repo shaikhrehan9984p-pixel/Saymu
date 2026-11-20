@@ -89,3 +89,92 @@ opacity:1;
 transform:translateY(0);
 }
 }
+.letter{
+margin-top:20px;
+display:none;
+animation:fade 1s;
+}
+
+.typewriter{
+overflow:hidden;
+border-right:3px solid #ff2f7d;
+white-space:nowrap;
+margin:auto;
+font-size:18px;
+width:0;
+animation:typing 6s steps(70,end) forwards,
+blink .8s infinite;
+}
+
+@keyframes typing{
+from{width:0;}
+to{width:100%;}
+}
+
+@keyframes blink{
+50%{border-color:transparent;}
+}
+
+.tulip{
+position:fixed;
+top:-50px;
+font-size:28px;
+animation:fall linear forwards;
+z-index:9999;
+pointer-events:none;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh) rotate(360deg);
+opacity:0;
+}
+}
+
+.sparkle{
+position:fixed;
+width:6px;
+height:6px;
+background:white;
+border-radius:50%;
+opacity:.8;
+animation:spark 3s infinite;
+}
+
+@keyframes spark{
+0%,100%{opacity:.2;transform:scale(.5);}
+50%{opacity:1;transform:scale(1.5);}
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<div class="bouquet">💐🌷💐</div>
+
+<h1>Hey Cutie Pie Saymu 🌷❤️</h1>
+
+<p>
+Every tulip reminds me of your beautiful smile.
+</p>
+
+<button onclick="openLetter()">
+💌 Open My Heart
+</button>
+
+<div class="letter" id="letter">
+
+<p class="typewriter">
+This little website is made only for you... 🌷❤️
+You make every day brighter.
+Thank you for being so special.
+</p>
+
+<button onclick="startTulips()">
+🌷 Surprise
+</button>
+
+</div>
