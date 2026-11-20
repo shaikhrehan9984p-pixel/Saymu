@@ -178,3 +178,79 @@ Thank you for being so special.
 </button>
 
 </div>
+<div id="gallery" style="display:none;margin-top:20px;">
+  <img src="photo1.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
+  <img src="photo2.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
+  <img src="photo3.jpg" style="width:100%;border-radius:15px;">
+</div>
+
+<button onclick="showGallery()" style="display:none;" id="galleryBtn">
+📸 Our Memories
+</button>
+
+<button onclick="playMusic()" style="display:none;" id="musicBtn">
+🎵 Play Music
+</button>
+
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+    document.getElementById("galleryBtn").style.display="inline-block";
+    document.getElementById("musicBtn").style.display="inline-block";
+}
+
+function showGallery(){
+    document.getElementById("gallery").style.display="block";
+}
+
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+
+function startTulips(){
+
+let count=0;
+
+let rain=setInterval(function(){
+
+let tulip=document.createElement("div");
+
+tulip.className="tulip";
+tulip.innerHTML="🌷";
+
+tulip.style.left=Math.random()*100+"vw";
+tulip.style.animationDuration=(5+Math.random()*3)+"s";
+
+document.body.appendChild(tulip);
+
+setTimeout(function(){
+tulip.remove();
+},8000);
+
+count++;
+
+if(count>=100){
+clearInterval(rain);
+}
+
+},120);
+
+}
+
+for(let i=0;i<30;i++){
+
+let s=document.createElement("div");
+
+s.className="sparkle";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+}
