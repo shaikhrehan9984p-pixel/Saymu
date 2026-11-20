@@ -254,3 +254,39 @@ s.style.top=Math.random()*100+"vh";
 document.body.appendChild(s);
 
 }
+function fireworks(){
+
+for(let i=0;i<60;i++){
+
+let spark=document.createElement("div");
+
+spark.innerHTML="✨";
+
+spark.style.position="fixed";
+spark.style.left=Math.random()*100+"vw";
+spark.style.top=Math.random()*100+"vh";
+spark.style.fontSize=(15+Math.random()*20)+"px";
+spark.style.zIndex="9999";
+
+document.body.appendChild(spark);
+
+setTimeout(()=>{
+spark.remove();
+},2000);
+
+}
+
+}
+
+document.getElementById("musicBtn").addEventListener("click",fireworks);
+
+</script>
+
+</div>
+
+<footer style="position:fixed;bottom:15px;width:100%;text-align:center;color:white;font-size:14px;">
+Made with ❤️ by Rehan
+</footer>
+
+</body>
+</html>
