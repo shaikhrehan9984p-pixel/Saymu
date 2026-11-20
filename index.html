@@ -149,7 +149,45 @@ animation:spark 3s infinite;
 
 </style>
 </head>
+<button onclick="openLetter()">
+💌 Open My Heart
+</button>
 
+<div class="letter" id="letter">
+
+<p class="typewriter">
+This little website is made only for you... 🌷❤️
+You make every day brighter.
+Thank you for being so special.
+</p>
+
+<div class="photo-box">
+    <img id="slideshow" src="IMG-20261121-WA0000.jpg" alt="Saymu">
+</div>
+
+<button onclick="startTulips()">
+🌷 Surprise
+</button>
+
+<button onclick="showGallery()" id="galleryBtn">
+📸 Our Memories
+</button>
+
+<button onclick="playMusic()" id="musicBtn">
+🎵 Play Music
+</button>
+
+<div id="gallery" style="display:none;margin-top:20px;">
+  <img src="IMG-20261121-WA0000.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
+  <img src="IMG-20261121-WA0001.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
+  <img src="IMG-20261121-WA0002.jpg" style="width:100%;border-radius:15px;">
+</div>
+
+<audio id="bgMusic" loop>
+  <source src="(256k).mp3" type="audio/mpeg">
+</audio>
+
+<script>
 <body>
 
 <div class="card">
