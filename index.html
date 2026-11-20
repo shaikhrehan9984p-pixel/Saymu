@@ -41,6 +41,21 @@ font-size:70px;
 animation:bounce 2s infinite;
 }
 
+.photo-box{
+display:flex;
+justify-content:center;
+margin:20px 0;
+}
+
+.photo-box img{
+width:220px;
+height:220px;
+object-fit:cover;
+border-radius:20px;
+border:5px solid #ff4d6d;
+box-shadow:0 0 25px #ff4d6d;
+}
+
 h1{
 margin-top:10px;
 font-size:32px;
@@ -53,7 +68,7 @@ font-size:18px;
 }
 
 button{
-margin-top:25px;
+margin-top:20px;
 padding:14px 30px;
 border:none;
 border-radius:40px;
@@ -68,30 +83,9 @@ button:hover{
 transform:scale(1.06);
 }
 
-#letter{
-display:none;
-margin-top:20px;
-}
-
-@keyframes bounce{
-50%{
-transform:translateY(-10px);
-}
-}
-
-@keyframes fade{
-from{
-opacity:0;
-transform:translateY(30px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
 .letter{
-margin-top:20px;
 display:none;
+margin-top:20px;
 animation:fade 1s;
 }
 
@@ -99,11 +93,18 @@ animation:fade 1s;
 overflow:hidden;
 border-right:3px solid #ff2f7d;
 white-space:nowrap;
-margin:auto;
-font-size:18px;
 width:0;
 animation:typing 6s steps(70,end) forwards,
 blink .8s infinite;
+}
+
+@keyframes bounce{
+50%{transform:translateY(-10px);}
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(30px);}
+to{opacity:1;transform:translateY(0);}
 }
 
 @keyframes typing{
@@ -157,161 +158,4 @@ animation:spark 3s infinite;
 
 <h1>Hey Cutie Pie Saymu 🌷❤️</h1>
 
-<p>
-Every tulip reminds me of your beautiful smile.
-</p>
-
-<button onclick="openLetter()">
-💌 Open My Heart
-</button>
-
-<div class="letter" id="letter">
-
-<p class="typewriter">
-This little website is made only for you... 🌷❤️
-You make every day brighter.
-Thank you for being so special.
-</p>
-
-<button onclick="startTulips()">
-🌷 Surprise
-</button>
-<div class="photo-box">
-    <img src="photo.jpg" alt="Saymu">
-</div>
-</div>
-<div id="gallery" style="display:none;margin-top:20px;">
-  <img src="photo1.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
-  <img src="photo2.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
-  <img src="photo3.jpg" style="width:100%;border-radius:15px;">
-</div>
-
-<button onclick="showGallery()" style="display:none;" id="galleryBtn">
-📸 Our Memories
-</button>
-
-<button onclick="playMusic()" style="display:none;" id="musicBtn">
-🎵 Play Music
-</button>
-
-<audio id="bgMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-
-function openLetter(){
-    document.getElementById("letter").style.display="block";
-    document.getElementById("galleryBtn").style.display="inline-block";
-    document.getElementById("musicBtn").style.display="inline-block";
-}
-
-function showGallery(){
-    document.getElementById("gallery").style.display="block";
-}
-
-function playMusic(){
-    document.getElementById("bgMusic").play();
-}
-
-function startTulips(){
-
-let count=0;
-
-let rain=setInterval(function(){
-
-let tulip=document.createElement("div");
-
-tulip.className="tulip";
-tulip.innerHTML="🌷";
-
-tulip.style.left=Math.random()*100+"vw";
-tulip.style.animationDuration=(5+Math.random()*3)+"s";
-
-document.body.appendChild(tulip);
-
-setTimeout(function(){
-tulip.remove();
-},8000);
-
-count++;
-
-if(count>=100){
-clearInterval(rain);
-}
-
-},120);
-
-}
-
-for(let i=0;i<30;i++){
-
-let s=document.createElement("div");
-
-s.className="sparkle";
-
-s.style.left=Math.random()*100+"vw";
-s.style.top=Math.random()*100+"vh";
-
-document.body.appendChild(s);
-
-}
-function fireworks(){
-
-for(let i=0;i<60;i++){
-
-let spark=document.createElement("div");
-
-spark.innerHTML="✨";
-
-spark.style.position="fixed";
-spark.style.left=Math.random()*100+"vw";
-spark.style.top=Math.random()*100+"vh";
-spark.style.fontSize=(15+Math.random()*20)+"px";
-spark.style.zIndex="9999";
-
-document.body.appendChild(spark);
-
-setTimeout(()=>{
-spark.remove();
-},2000);
-
-}
-
-}
-
-document.getElementById("musicBtn").addEventListener("click",fireworks);
-
-</script>
-
-</div>
-
-<footer style="position:fixed;bottom:15px;width:100%;text-align:center;color:white;font-size:14px;">
-Made with ❤️ by Rehan
-</footer>
-
-</body>
-  <audio id="bgmusic" loop>
-  <source src="sahiba.mp3" type="audio/mpeg">
-</audio>
-
-<script>
-document.addEventListener("click", function () {
-  document.getElementById("bgmusic").play();
-}, { once: true });
-</script>
-</html>
-.photo-box{
-    display:flex;
-    justify-content:center;
-    margin-top:30px;
-}
-
-.photo-box img{
-    width:220px;
-    height:220px;
-    object-fit:cover;
-    border-radius:20px;
-    border:5px solid #ff4d6d;
-    box-shadow:0 0 25px #ff4d6d;
-}
+<p>Every tulip reminds me of your beautiful smile.</p>
