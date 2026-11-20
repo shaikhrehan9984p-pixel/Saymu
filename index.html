@@ -1,61 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>For Saymu ❤️</title>
-
-<style>
-body{
-margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ff4b91,#ff9ac6);
-font-family:Arial,sans-serif;
-color:white;
-text-align:center;
-}
-.box{
-padding:30px;
-}
-button{
-padding:12px 25px;
-border:none;
-border-radius:30px;
-font-size:18px;
-background:white;
-color:#ff4b91;
-cursor:pointer;
-}
-#love{
-display:none;
-margin-top:20px;
-font-size:24px;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Saymu ❤️</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="box">
-<h1>Hi Saymu ❤️</h1>
-<p>You make every day special.</p>
-
-<button onclick="showLove()">Click Here 💖</button>
-
-<div id="love">
-I Like You So Much ❤️<br><br>
-Stay Happy Forever 🌹
-</div>
+<div id="loading">
+  <h1>💖 A Special Surprise For Saymu 💖</h1>
+  <p>Loading Love...</p>
 </div>
 
-<script>
-function showLove(){
-document.getElementById("love").style.display="block";
-}
-</script>
+<div id="main" style="display:none;">
+
+  <h1>Hi Saymu ❤️</h1>
+
+  <p class="quote">
+    "Some people make the world beautiful just by being in it.
+    You are one of them."
+  </p>
+
+  <button onclick="showLetter()">💌 Open My Heart</button>
+
+  <div id="letter">
+    <h2>For You ❤️</h2>
+
+    <p id="typing"></p>
+
+    <button onclick="showGallery()">
+      📸 Our Memories
+    </button>
+
+  </div>
+
+  <div id="gallery" style="display:none;">
+
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+
+  </div>
+
+  <audio id="music" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="musicBtn" onclick="playMusic()">
+    🎵 Play Music
+  </button>
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
 </html>
