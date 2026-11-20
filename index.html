@@ -197,3 +197,79 @@ Thank you for being so special.
 <h1>Hey Cutie Pie Saymu 🌷❤️</h1>
 
 <p>Every tulip reminds me of your beautiful smile.</p>
+function openLetter(){
+    document.getElementById("letter").style.display="block";
+}
+
+function showGallery(){
+    document.getElementById("gallery").style.display="block";
+}
+
+function playMusic(){
+    document.getElementById("bgMusic").play();
+}
+
+const photos=[
+"IMG-20261121-WA0000.jpg",
+"IMG-20261121-WA0001.jpg",
+"IMG-20261121-WA0002.jpg"
+];
+
+let i=0;
+setInterval(function(){
+    i=(i+1)%photos.length;
+    document.getElementById("slideshow").src=photos[i];
+},3000);
+
+function startTulips(){
+
+let count=0;
+
+let rain=setInterval(function(){
+
+let tulip=document.createElement("div");
+tulip.className="tulip";
+tulip.innerHTML="🌷";
+
+tulip.style.left=Math.random()*100+"vw";
+tulip.style.animationDuration=(5+Math.random()*3)+"s";
+
+document.body.appendChild(tulip);
+
+setTimeout(function(){
+tulip.remove();
+},8000);
+
+count++;
+
+if(count>=100){
+clearInterval(rain);
+}
+
+},120);
+
+}
+
+for(let i=0;i<30;i++){
+
+let s=document.createElement("div");
+
+s.className="sparkle";
+
+s.style.left=Math.random()*100+"vw";
+s.style.top=Math.random()*100+"vh";
+
+document.body.appendChild(s);
+
+}
+
+</script>
+
+</div>
+
+<footer style="position:fixed;bottom:15px;width:100%;text-align:center;color:white;font-size:14px;">
+Made with ❤️ by Rehan
+</footer>
+
+</body>
+</html>
