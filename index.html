@@ -3,273 +3,149 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>For Saymu 🌷❤️</title>
 
-<style>
-
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
-
-body{
-height:100vh;
-overflow:hidden;
-display:flex;
-justify-content:center;
-align-items:center;
-background:linear-gradient(135deg,#ffb6d9,#ffdce8,#fff5f8);
-}
-
-.card{
-width:90%;
-max-width:420px;
-background:rgba(255,255,255,.22);
-backdrop-filter:blur(15px);
-padding:30px;
-border-radius:30px;
-box-shadow:0 15px 40px rgba(0,0,0,.15);
-text-align:center;
-color:#ff2f7d;
-animation:fade 1.5s;
-}
-
-.bouquet{
-font-size:70px;
-animation:bounce 2s infinite;
-}
-
-.photo-box{
-display:flex;
-justify-content:center;
-margin:20px 0;
-}
-
-.photo-box img{
-width:220px;
-height:220px;
-object-fit:cover;
-border-radius:20px;
-border:5px solid #ff4d6d;
-box-shadow:0 0 25px #ff4d6d;
-}
-
-h1{
-margin-top:10px;
-font-size:32px;
-}
-
-p{
-margin-top:15px;
-line-height:1.7;
-font-size:18px;
-}
-
-button{
-margin-top:20px;
-padding:14px 30px;
-border:none;
-border-radius:40px;
-background:#ff2f7d;
-color:white;
-font-size:18px;
-cursor:pointer;
-transition:.3s;
-}
-
-button:hover{
-transform:scale(1.06);
-}
-
-.letter{
-display:none;
-margin-top:20px;
-animation:fade 1s;
-}
-
-.typewriter{
-overflow:hidden;
-border-right:3px solid #ff2f7d;
-white-space:nowrap;
-width:0;
-animation:typing 6s steps(70,end) forwards,
-blink .8s infinite;
-}
-
-@keyframes bounce{
-50%{transform:translateY(-10px);}
-}
-
-@keyframes fade{
-from{opacity:0;transform:translateY(30px);}
-to{opacity:1;transform:translateY(0);}
-}
-
-@keyframes typing{
-from{width:0;}
-to{width:100%;}
-}
-
-@keyframes blink{
-50%{border-color:transparent;}
-}
-
-.tulip{
-position:fixed;
-top:-50px;
-font-size:28px;
-animation:fall linear forwards;
-z-index:9999;
-pointer-events:none;
-}
-
-@keyframes fall{
-to{
-transform:translateY(110vh) rotate(360deg);
-opacity:0;
-}
-}
-
-.sparkle{
-position:fixed;
-width:6px;
-height:6px;
-background:white;
-border-radius:50%;
-opacity:.8;
-animation:spark 3s infinite;
-}
-
-@keyframes spark{
-0%,100%{opacity:.2;transform:scale(.5);}
-50%{opacity:1;transform:scale(1.5);}
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-<button onclick="openLetter()">
-💌 Open My Heart
-</button>
 
-<div class="letter" id="letter">
-
-<p class="typewriter">
-This little website is made only for you... 🌷❤️
-You make every day brighter.
-Thank you for being so special.
-</p>
-
-<div class="photo-box">
-    <img id="slideshow" src="IMG-20261121-WA0000.jpg" alt="Saymu">
-</div>
-
-<button onclick="startTulips()">
-🌷 Surprise
-</button>
-
-<button onclick="showGallery()" id="galleryBtn">
-📸 Our Memories
-</button>
-
-<button onclick="playMusic()" id="musicBtn">
-🎵 Play Music
-</button>
-
-<div id="gallery" style="display:none;margin-top:20px;">
-  <img src="IMG-20261121-WA0000.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
-  <img src="IMG-20261121-WA0001.jpg" style="width:100%;border-radius:15px;margin-bottom:10px;">
-  <img src="IMG-20261121-WA0002.jpg" style="width:100%;border-radius:15px;">
-</div>
-
-<audio id="bgMusic" loop>
-  <source src="(256k).mp3" type="audio/mpeg">
-</audio>
-
-<script>
 <body>
 
-<div class="card">
+<div class="container">
 
-<div class="bouquet">💐🌷💐</div>
+<h1>For My Beautiful Saymu 🌷❤️</h1>
 
-<h1>Hey Cutie Pie Saymu 🌷❤️</h1>
+<img src="photo.jpg" class="photo">
 
-<p>Every tulip reminds me of your beautiful smile.</p>
-function openLetter(){
-    document.getElementById("letter").style.display="block";
-}
+<p id="text"></p>
 
-function showGallery(){
-    document.getElementById("gallery").style.display="block";
-}
-
-function playMusic(){
-    document.getElementById("bgMusic").play();
-}
-
-const photos=[
-"IMG-20261121-WA0000.jpg",
-"IMG-20261121-WA0001.jpg",
-"IMG-20261121-WA0002.jpg"
-];
-
-let i=0;
-setInterval(function(){
-    i=(i+1)%photos.length;
-    document.getElementById("slideshow").src=photos[i];
-},3000);
-
-function startTulips(){
-
-let count=0;
-
-let rain=setInterval(function(){
-
-let tulip=document.createElement("div");
-tulip.className="tulip";
-tulip.innerHTML="🌷";
-
-tulip.style.left=Math.random()*100+"vw";
-tulip.style.animationDuration=(5+Math.random()*3)+"s";
-
-document.body.appendChild(tulip);
-
-setTimeout(function(){
-tulip.remove();
-},8000);
-
-count++;
-
-if(count>=100){
-clearInterval(rain);
-}
-
-},120);
-
-}
-
-for(let i=0;i<30;i++){
-
-let s=document.createElement("div");
-
-s.className="sparkle";
-
-s.style.left=Math.random()*100+"vw";
-s.style.top=Math.random()*100+"vh";
-
-document.body.appendChild(s);
-
-}
-
-</script>
+<button id="btn">Click Here ❤️</button>
 
 </div>
 
-<footer style="position:fixed;bottom:15px;width:100%;text-align:center;color:white;font-size:14px;">
-Made with ❤️ by Rehan
-</footer>
+<audio id="music" loop>
+<source src="song.mp3" type="audio/mpeg">
+</audio>
+
+<script src="script.js"></script>
 
 </body>
 </html>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+}
+
+.container{
+    text-align:center;
+    background:rgba(255,255,255,.2);
+    backdrop-filter:blur(12px);
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+    max-width:350px;
+}
+
+h1{
+    color:white;
+    margin-bottom:20px;
+}
+
+.photo{
+    width:220px;
+    height:220px;
+    object-fit:cover;
+    border-radius:20px;
+    border:5px solid white;
+    margin-bottom:20px;
+}
+
+#text{
+    color:white;
+    font-size:20px;
+    min-height:60px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:12px 30px;
+    border:none;
+    border-radius:50px;
+    background:white;
+    color:#ff4f81;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.08);
+
+}
+@keyframes fall{
+    from{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+    to{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+const btn = document.getElementById("btn");
+const text = document.getElementById("text");
+const music = document.getElementById("music");
+
+const message =
+"Saymu ❤️\nYou are the most beautiful part of my life.\nEvery moment with you feels like magic. 🌷";
+
+let i = 0;
+
+btn.onclick = () => {
+    music.play();
+
+    btn.style.display = "none";
+
+    typeWriter();
+
+    setInterval(createTulip, 300); // Around 100 tulips
+};
+
+function typeWriter() {
+    if (i < message.length) {
+        text.innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, 60);
+    }
+}
+
+function createTulip() {
+
+    const tulip = document.createElement("div");
+
+    tulip.innerHTML = "🌷";
+
+    tulip.style.position = "fixed";
+    tulip.style.left = Math.random() * window.innerWidth + "px";
+    tulip.style.top = "-40px";
+    tulip.style.fontSize = (20 + Math.random() * 20) + "px";
+    tulip.style.animation = "fall 6s linear forwards";
+
+    document.body.appendChild(tulip);
+
+    setTimeout(() => {
+        tulip.remove();
+    }, 6000);
+
+}
